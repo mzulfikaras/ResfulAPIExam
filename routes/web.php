@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('ongkir','OngkirController@index');
+Route::post('cek-ongkir', ['uses'=>'OngkirController@cek_ongkir', 'as'=>'cek.ongkir']);
+Route::get('get-kota/{q?}', ['uses'=>'KotaController@get_kota', 'as'=>'get.kota']);
